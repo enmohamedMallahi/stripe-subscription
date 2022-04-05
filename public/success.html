@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Subscription Success</title>
+    <meta name="description" content="A demo of Stripe Payment Intents" />
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+
+    <script defer src="./success.js" defer></script>
+  </head>
+
+  <body>
+    <ion-app>
+      <ion-toolbar color="primary">
+        <ion-title class="ion-text-center"><a href="/" style="color: #fff; text-decoration: none;">Togethere</a></ion-title>
+      </ion-toolbar>
+
+      <ion-content class="padding ion-text-center">
+        <h2>Your payment succeeded</h2>
+        <p>Thank you for your support.</p>
+        <p>Your payment was successful! Your session id is <code id="sessionId"></code></p>
+
+        <ion-button id="showInfo" color="primary">Show Payment Info</ion-button>
+        <ion-button id="cancelSubscription" color="danger">Cancel Subscription</ion-button>
+
+        <pre class="ion-text-left" style="margin: 0 3rem; padding: 2rem;background-color: #34495e; color: #ecf0f1;">
+          Payment Info:
+        </pre>
+      </ion-content>
+
+    </ion-app>
+  </body>
+</html>

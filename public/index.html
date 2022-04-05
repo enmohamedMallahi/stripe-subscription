@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Stripe Checkout Sample</title>
+  <meta name="description" content="A demo of Stripe Payment Intents" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+  <!-- Load Stripe.js on your website. -->
+  <script src="https://js.stripe.com/v3/"></script>
+  <script defer src="./script.js" defer></script>
+</head>
+
+<body>
+  <ion-app>
+    <ion-toolbar color="primary">
+      <ion-title class="ion-text-center"><a href="/" style="color: #fff; text-decoration: none">Togethere</a></ion-title>
+    </ion-toolbar>
+
+    
+      <h1 class="ion-text-center">Choose a collaboration plan</h1>
+    
+
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-card class="ion-text-center"> 
+              <ion-card-header>
+                <img src="/img/starter.png" width="200" height="200" />
+                <ion-card-title>Starter</ion-card-title>
+                <ion-card-subtitle>$12 per month</ion-card-subtitle>
+              </ion-card-header>
+              <ion-card-content>
+                <form action="/create-checkout-session" method="POST">
+                  <input type="hidden" id="basicPrice" name="priceId">
+                  <ion-button type="submit" id="basic-plan-btn" color="primary">Select</ion-button>
+      
+                </form>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+          <ion-col>
+            <ion-card class="ion-text-center">
+              <ion-card-header>
+                <img src="/img/professional.png" width="200" height="200" />
+                <ion-card-title>Professional</ion-card-title>
+                <ion-card-subtitle>$18 per month</ion-card-subtitle>
+              </ion-card-header>
+              <ion-card-content>
+                <form action="/create-checkout-session" method="POST">
+                  <input type="hidden" id="proPrice" name="priceId">
+                  <ion-button type="submit" id="pro-plan-btn" color="primary">Select</ion-button>
+                </form>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    
+    <div id="error-message" class="error-message"></div>
+  </ion-app>
+</body>
+
+</html>
